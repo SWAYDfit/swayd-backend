@@ -6,7 +6,7 @@ app.use(cors({ origin: "*" }));
 app.use(express.json());
 
 const ANTHROPIC_API = "https://api.anthropic.com/v1/messages";
-const MODEL = "claude-sonnet-4-20250514";
+const MODEL = "claude-sonnet-4-5";
 
 async function callAnthropic(system, userMessage, maxTokens = 1000) {
   const res = await fetch(ANTHROPIC_API, {
