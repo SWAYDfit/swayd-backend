@@ -24,6 +24,7 @@ async function callAnthropic(system, userMessage, maxTokens = 1000) {
     }),
   });
   const data = await res.json();
+  console.log("Anthropic status:", res.status, "response:", JSON.stringify(data).slice(0, 200));
   if (!res.ok) throw new Error(data.error?.message || "Anthropic API error");
   return data.content?.[0]?.text || "";
 }
