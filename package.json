@@ -1,20 +1,26 @@
 {
-  "name": "swayd-api",
-  "version": "1.0.0",
-  "description": "Swayd fitness app API backend",
-  "main": "server.js",
+  "name": "swayd-backend",
+  "version": "2.0.0",
+  "description": "Swayd API: accounts, crews, events, tracking and the AI coach",
+  "type": "module",
+  "main": "src/server.js",
+  "engines": { "node": ">=20" },
   "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon server.js"
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "test": "node test/smoke.js"
   },
   "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^4.18.2"
-  },
-  "devDependencies": {
-    "nodemon": "^3.0.2"
-  },
-  "engines": {
-    "node": ">=18.0.0"
+    "@aws-sdk/client-s3": "3.1146.0",
+    "bcryptjs": "3.0.3",
+    "cors": "2.8.6",
+    "dotenv": "18.0.5",
+    "express": "5.2.1",
+    "express-rate-limit": "8.7.0",
+    "helmet": "8.3.0",
+    "jsonwebtoken": "9.0.3",
+    "multer": "2.4.0",
+    "pg": "8.23.1",
+    "zod": "4.6.5"
   }
 }
